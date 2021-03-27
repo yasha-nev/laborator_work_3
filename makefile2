@@ -1,0 +1,24 @@
+all: test
+
+test: main.o excursion.o workFiles.o search.o sort.o change.o
+	gcc main.o excursion.o workFiles.o search.o sort.o change.o -o test 
+main.o: main.c
+	gcc -c main.c
+
+excursion.o: excursion.c
+	gcc -c excursion.c
+
+workFiles.o: workFiles.c
+	gcc -c workFiles.c
+
+sort.o: sort.c
+	gcc -c sort.c
+
+search.o: search.c
+	gcc -c search.c
+
+change.o: change.c
+	gcc -c change.c
+
+clean:
+	rm -rf *.o test
