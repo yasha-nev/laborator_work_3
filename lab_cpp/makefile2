@@ -1,0 +1,25 @@
+all: test
+
+test: main.o excursion.o sort.o appfunction.o list.o file.o
+	g++ main.o excursion.o file.o sort.o list.o appfunction.o -o test 
+
+main.o: main.cpp
+	g++ -c main.cpp
+
+excursion.o: excursion.cpp
+	g++ -c excursion.cpp
+
+file.o: file.cpp
+	g++ -c file.cpp
+
+sort.o: sort.cpp
+	g++ -c sort.cpp
+
+appfunction.o: appfunction.cpp
+	g++ -c appfunction.cpp
+
+list.o: list.cpp
+	g++ -c list.cpp
+
+clean:
+	rm -rf *.o test
